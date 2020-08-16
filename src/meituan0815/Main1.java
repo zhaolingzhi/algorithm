@@ -19,7 +19,7 @@ public class Main1 {
         List<int[]> ans = new ArrayList<>();
         for(int i = 1; i <= n; i++){
             int r = reverse(i);
-            if (r == i * 4){
+            if (r == i * 4 && r < 1e7){
                 ans.add(new int[]{i, r});
             }
         }
