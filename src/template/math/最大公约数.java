@@ -4,6 +4,16 @@ public class 最大公约数 {
     public static int gcd(int a, int b) {
         if (b == 0) return a;
         return gcd(b, a % b);
+
+    }
+
+    int gcd2(int x, int y){
+        while(y != 0){
+            int t = y;
+            y = x % y;
+            x = t;
+        }
+        return x;
     }
 
     //（快速GCD）

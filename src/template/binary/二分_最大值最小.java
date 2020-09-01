@@ -3,8 +3,8 @@ package template.binary;
 public class 二分_最大值最小 {
     static int[] a = {2, 4, 6, 8, 10, 12, 14};
 
-    public static void maint(String[] args) {
-        System.out.println(bsearch_maxMin(11));
+    public static void main(String[] args) {
+        System.out.println(a[bsearch_maxMin(11)]);
     }
 
     private static int bsearch_maxMin(int x) {
@@ -18,6 +18,6 @@ public class 二分_最大值最小 {
                 l = mid + 1;
             }
         }
-        return l;//返回5
+        return l;//返回12
     }
 }
