@@ -121,22 +121,22 @@ public class ProducerAndConsumer {
         }
 
 
-//        ProducerAndConsumer p = new ProducerAndConsumer();
-//        p.waitFunc();
-//        BlockingQueue<CarData> queue = new LinkedBlockingQueue<>(1000);
-//        CarStock carStock = new CarStock(queue);
-//        ThreadFactory consumerThreadFactory = new ThreadFactoryBuilder().setNameFormat("Consumer Thread-%d").build();
-//        ThreadFactory producerThreadFactory = new ThreadFactoryBuilder().setNameFormat("Producer Thread-%d").build();
-//        ExecutorService consumerPool = new ThreadPoolExecutor(2, 4, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<>(), consumerThreadFactory);
-//        ExecutorService producerPool = new ThreadPoolExecutor(2, 4, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<>(), producerThreadFactory);
-//        consumerPool.submit(new CarConsumer(carStock));
-//        consumerPool.submit(new CarConsumer(carStock));
-//        producerPool.submit(new CarProducer(carStock));
-//        producerPool.submit(new CarProducer(carStock));
-//        consumerPool.shutdown();
-//        producerPool.shutdown();
-////        consumerPool.awaitTermination(5, TimeUnit.SECONDS);
-////        productorPool.awaitTermination(5, TimeUnit.SECONDS);
+        ProducerAndConsumer p = new ProducerAndConsumer();
+        p.waitFunc();
+        BlockingQueue<CarData> queue = new LinkedBlockingQueue<>(1000);
+        CarStock carStock = new CarStock(queue);
+        ThreadFactory consumerThreadFactory = new ThreadFactoryBuilder().setNameFormat("Consumer Thread-%d").build();
+        ThreadFactory producerThreadFactory = new ThreadFactoryBuilder().setNameFormat("Producer Thread-%d").build();
+        ExecutorService consumerPool = new ThreadPoolExecutor(2, 4, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<>(), consumerThreadFactory);
+        ExecutorService producerPool = new ThreadPoolExecutor(2, 4, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<>(), producerThreadFactory);
+        consumerPool.submit(new CarConsumer(carStock));
+        consumerPool.submit(new CarConsumer(carStock));
+        producerPool.submit(new CarProducer(carStock));
+        producerPool.submit(new CarProducer(carStock));
+        consumerPool.shutdown();
+        producerPool.shutdown();
+//        consumerPool.awaitTermination(5, TimeUnit.SECONDS);
+//        productorPool.awaitTermination(5, TimeUnit.SECONDS);
 //        System.out.println("exit");
     }
 }
