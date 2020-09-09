@@ -22,4 +22,14 @@ public class 最大连续子串 {
         }
         return max;
     }
+
+    public int maxSubArrayNoArrayRound(int[] nums){
+        int s = nums[0];
+        int max = 0;
+        for (int i = 1; i < nums.length * 2; i++){
+            s = Math.max(s + nums[i % nums.length], nums[i % nums.length]);
+            max = Math.max(max, s);
+        }
+        return max;
+    }
 }
